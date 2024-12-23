@@ -1,0 +1,700 @@
+/* npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch */
+@import url('https://fonts.cdnfonts.com/css/butler');
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* CURSOR EFFECT */
+#cursor {
+    pointer-events: none;
+    display: none;
+    position: fixed;
+    top: var(--cursorY);
+    left: var(--cursorX);
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition-timing-function: ease-in-out;
+}
+
+
+/* STYLE VARIABLES */
+:root {
+    --cursorX: 0;
+    --cursorY: 0;
+    --primary-font: "butler";
+    --primary-color: #283d47;
+    --secondary-color: #C6AC8E;
+    --black-color: #050E14;
+    --black-75-color: #444A4F;
+    --black-50-color: #818689;
+    --black-25-color: #C0C2C4;
+    --black-10-color: #E6E7E8;
+    --black-5-color: #F2F3F3;
+}
+/* ILLUSTRATIONS: #8C979C */
+
+.text-butler {
+    font-family: var(--primary-font);
+    font-weight: 200;
+}
+.text-primary {
+    color: var(--primary-color);
+}
+.text-secondary {
+    color: var(--secondary-color);
+}
+.bg-primary {
+    background-color: var(--primary-color);
+}
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
+.text-primary::selection {
+    background: var(--secondary-color);
+}
+.text-secondary::selection {
+    background: var(--primary-color);
+}
+.text-black {
+    color: var(--black-color) !important;
+}
+.text-black-75 {
+    color: var(--black-75-color);
+}
+.text-black-50 {
+    color: var(--black-50-color);
+}
+.text-black-25 {
+    color: var(--black-25-color);
+}
+.text-black-10 {
+    color: var(--black-10-color);
+}
+.text-black-5 {
+    color: var(--black-5-color);
+}
+.bg-black-50 {
+    background-color: var(--black-50-color);
+}
+.bg-black-25 {
+    background-color: var(--black-25-color);
+}
+.bg-black-10 {
+    background-color: var(--black-10-color);
+}
+.bg-black-5 {
+    background-color: var(--black-5-color);
+}
+
+::selection {
+    background: var(--secondary-color);
+}
+.text-black::selection, .text-black-50::selection, .text-black-75::selection, .selection-secondary::selection {
+    background: var(--secondary-color);
+}
+.hover-25:hover {
+    color: var(--black-25-color);
+}
+.hover-bg-10:hover {
+    background-color: var(--black-10-color);
+    transition: 0.4s;
+}
+
+.bg-primary-darker {
+    background: #23333b;
+}
+
+
+
+/* ANIMATIONS */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(-5deg);
+    }
+    67% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(10rem);
+    }
+    60% {
+        transform: translateY(-20rem);
+    }
+}
+.move {
+    animation: move linear;
+    animation-timeline: scroll();
+}
+
+@keyframes enlarge {
+    from {
+        width: 66.67%;
+        height: 20rem;
+    }
+    to {
+        width: 70%;
+        height: 23rem;
+    }
+}
+.enlarge {
+    animation: enlarge linear;
+    animation-timeline: scroll();
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+.fade {
+    animation: fade linear;
+    animation-timeline: view();
+}
+
+@keyframes reveal {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.reveal {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s ease;
+}
+.reveal--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes slideLeft {
+    0% {
+        left: -80%;
+        opacity:0
+    }
+    80% {
+        left: 30px; 
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+.slideLeft {
+    position: relative;
+    animation: slideLeft 0.6s;
+}
+
+@keyframes slideRight {
+    0% {
+        left: 80%;
+        opacity:0
+    }
+    80% {
+        left: -30px; 
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+.slideRight {
+    position: relative;
+    animation: slideRight 0.6s;
+}
+
+
+/* HERO */
+.hero {
+    background-image: url(../img/Home.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* NAVBAR */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+}
+header #hamburger {
+    display: none;
+}
+
+/* UNDERLINE ANIMATION */
+.underline-animation {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--secondary-color);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+.underline-animation:hover::after,
+.underline-animation:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+/* CONTACT BUTTON */
+.btn1 {
+    transition: background-color 0.5s;
+}
+.btn1:hover {
+    background-color: var(--secondary-color);
+    animation: rotate 0.5s linear;
+    animation-delay: 0.1s;
+}
+
+/* ONTDEK BUTTON */
+.btn2:hover {
+    background-color: var(--secondary-color);
+    transition: 0.5s;
+}
+.btn2:hover i {
+    animation: rotate2 0.4s;
+}
+
+/* CONTACT BUTTON 2 */
+.btn3 {
+    transition: 0.5s;
+}
+.btn3:hover {
+    background-color: var(--primary-color);
+    animation: rotate 0.5s linear;
+    animation-delay: 0.1s;
+    color: var(--black-5-color) !important;
+}
+
+
+/* SECTION 2 */
+.waves {
+    margin-top: -10rem;
+}
+#section2 {
+    margin-top: -0.1rem;
+}
+
+#x {
+    display: none !important;
+}
+
+
+.parallax {
+    background-image: url("../img/BELOFTES.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.card-shadow {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.125);
+}
+
+
+/* FAQ */
+  
+.panel-title {
+    width: 100%;
+    position: relative;
+    margin-left: 1rem;
+    padding: 10px 10px 0 48px;
+    display: block;
+    cursor: pointer;
+}
+  
+.panel-content {
+    font-size: 20px;
+    padding: 0px 14px;
+    margin: 0 40px;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    opacity: 0;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+    transition: .4s ease;
+}
+  
+.panel:checked ~ .panel-content{
+    height: auto;
+    opacity: 1;
+    padding: 14px;
+}
+  
+.plus {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 4px;
+    z-index: 5;
+    font-size: 42px;
+    line-height: 100%;
+    -webkit-user-select: none;    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+}
+  
+.panel:checked ~ .plus {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+.panel {
+    display: none;
+}
+
+
+.hidden {
+    display: none;
+  }
+  .required-field {
+    border-color: #f87171;
+    background-color: #fee2e2;
+  }
+  .disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1420px) {
+    #ontwerpSection1 {
+        padding: 7rem;
+    }
+}
+@media (max-width: 1300px) {
+    #section2, #contactSection1 {
+        padding: 5rem 15rem;
+        display: flex;
+        flex-direction: column;
+    }
+    #contactSection1 {
+        gap: 0;
+    }
+    .contactName, #ontwerpSection1 {
+        display: flex;
+        flex-direction: column;
+    }
+    #ontwerpSection1 p {
+        margin-right: 0;
+    }
+    #ontwerpSection1 form {
+        margin-top: 5rem;
+    }
+
+    .contactTxt, .contactForm {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #cursor svg {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 5rem;
+    }
+    .navbar ul {
+        padding: 0 2rem;
+    }
+    #section1 {
+        padding: 0 6rem;
+    }
+    .sectionResp {
+        padding: 6rem 10rem;
+    }
+    #section1Img {
+        width: 35rem;
+    }
+
+    #aboutSection1 {
+        gap: 2rem;
+        padding: 5rem 10rem;
+    }
+}
+@media (max-width: 1000px) {
+
+    #links {
+        display: none;
+    }
+    #hamb {
+        display: block;
+    }
+    .hero {
+        padding-bottom: 5rem;
+    }
+    header i {
+        display: block !important;
+        font-size: 3rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 3rem;
+    }
+    header {
+        padding: 0 !important;
+    }
+    .navbar, .aboutSection3Cards {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    
+    #navItem4 {
+        display: block;
+    }
+    .navbar ul {
+        width: 100%;
+    }
+    .navbar ul, .navbar .logo {
+        display: block;
+    }
+    .navbar .logo {
+        padding: 2rem 0;
+    }
+    .logoImg {
+        margin-left: 3rem;
+    }
+    .navbar li {
+        padding: 1rem 0 1rem 3rem;
+        border-bottom: 2px solid var(--secondary-color);
+    }
+    .navbar li:hover {
+        background: var(--black-10-color);
+    }
+    .mainLi:hover {
+        background: linear-gradient(to right, #314e5b, rgb(51, 81, 95)) !important;
+    }
+    #navItem1 {
+        border-top: 2px solid var(--secondary-color);
+    }
+    .navbar button {
+        display: none;
+    }
+    .underline-animation::after {
+        width: 0;
+    }
+    #topbar {
+        display: flex;
+        gap: 60vw;
+    }
+    
+    .hero {
+        padding-top: 0;
+        background-size: cover;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+    .navbar ul {
+        padding: 0;
+    }
+    #section1 {
+        padding: 0 1rem;
+    }
+    .arrow {
+        display: none;
+    }
+    .dots {
+        display: none;
+    }
+
+    #section2 {
+        padding: 5rem 7rem;
+    }
+    #section2 p {
+        margin-bottom: 5rem;
+    }
+    #section4 {
+        padding: 5rem 1.5rem;
+    }
+    #section4 p {
+        font-size: 1.2rem;
+    }
+    .sectionResp {
+        padding: 9rem 2rem;
+    }
+    #section6, #aboutSection1, #contactSection1 {
+        padding: 9rem 3rem;
+    }
+
+    .footerLinks {
+        padding: 0 6rem;
+    }
+
+    .aanbodCard {
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem 3rem;
+    }
+    .aanbodCard img {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 750px) {
+    #section1 {
+        padding-bottom: 3rem;
+    }
+
+    #section5Contact, #aboutSection1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #aboutSection1 img {
+        width: 15rem;
+    }
+
+    #section5Contact div {
+        padding: 2rem 0;
+    }
+
+    #section4 {
+        flex-direction: column;
+    }
+    .belofteDiv {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        margin-left: 5rem;
+    }
+    
+    .footerLinks {
+        padding: 0 3rem;
+    }
+
+    .text-6xl {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .logoImg {
+        margin-left: 2rem;
+        width: 6000px;
+    }
+    .footerLinks {
+        padding: 0;
+    }
+    .link {
+        grid-column-start: 1;
+        padding: 2rem 0;
+    }
+    .link1 {
+        grid-row-start: 1;
+    }
+    .link2 {
+        grid-row-start: 2;
+    }
+    .link3 {
+        grid-row-start: 3;
+    }
+
+    #section1Img {
+        margin-bottom: 4rem;
+    }
+
+    
+    #section2 {
+        padding: 5rem 2rem;
+    }
+
+    .text-6xl {
+        font-size: 2.5rem;
+    }
+
+    #section5 {
+        padding-bottom: 9rem;
+    }
+
+    .aanbodCard {
+        padding: 2.5rem 2rem;
+    }
+    #ontwerpSection1 {
+        padding: 7rem 2rem;
+    }
+    .aanbodCard img {
+        width: 12rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .contactForm {
+        padding: 3rem 2rem;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .text-4xl {
+        font-size: 1.75rem;
+    }
+    .text-lg {
+        font-size: 1rem;
+    }
+    .belofteDiv {
+        margin-left: 1rem;
+    }
+    .contactForm {
+        padding: 3rem 1.5rem;
+    }
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CKEKP6LRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-6CKEKP6LRV');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeltaWeb</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="shortcut icon" href="./img/Favicon.jpg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3d68587050.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- CURSOR EFFECT -->
+    <span id="cursor">
+        <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0" fill="#283d47af"/>
+        </svg>
+    </span>
+        
+    <!-- HEADER -->
+    <header class="py-10 flex shadow-lg">
+        <nav class="w-full px-52 navbar">
+            <div class="col-start-1 flex justify-center items-center logo" id="topbar">
+                <a href="https://delta-web.be"><img src="./img/logo/LOGO_NOBG_BLACK_CROPPED_SMALL.png" alt="Logo"  class="w-32 logoImg"></a>
+
+                <a href="javascript:void(0);" onclick="dropdown()" id="hamb">
+                    <i class="fa-solid fa-bars" id="hamburger"></i>
+                </a>
+            </div>
+            
+            <ul class="text-xl flex justify-around flex-row items-center col-start-2" id="links">
+                <li id="navItem1" class="mainLi"><a href="https://delta-web.be" class="underline-animation px-10">Home</a></li>
+                <li id="navItem2" class="mainLi"><a href="over-ons" class="underline-animation px-10">Over ons</a></li>
+                <li id="navItem3" class="mainLi"><a href="aanbod" class="underline-animation px-10">Aanbod</a></li>
+                <li id="navItem3" class="mainLi"><a href="contact" class="underline-animation px-10">Contact</a></li>
+            </ul>
+            
+            <div class="col-start-3 flex justify-center">
+                <a href="gratis_ontwerp" target="_blank">
+                    <button class="text-black bg-secondary w-52 h-12 shadow-lg transition-color btn3 col-start-3 text-xl">Ontwerp aanvragen</button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="grid grid-cols-2 px-56 py-28" id="ontwerpSection1">
+        <div class="col-start-1 mt-16">
+            <h1 class="text-butler text-black uppercase text- text-6xl">laten we samenwerken!</h1>
+            <p class="text-black-75 mr-40 text-lg mt-4">Bij DeltaWeb bieden wij u de kans om een gratis eerste ontwerp aan te vragen, zonder verplichtingen. Dit stelt u in staat om vrijblijvend te zien wat wij voor uw website kunnen betekenen en hoe wij uw idee&#235;n tot leven kunnen brengen. Vul het formulier in en ontdek hoe wij uw online aanwezigheid kunnen verbeteren met een professioneel ontwerp op maat.</p>
+        </div>
+
+        <div class="col-start-2">
+            <form
+            action="https://formspree.io/f/mwpeqeqa"
+            method="POST"
+            class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg"
+            id="multiStepForm"
+            >
+            <!-- CONTACTGEGEVENS -->
+            <div id="step1" class="form-step">
+              <h2 class="text-2xl font-bold mb-6">Contactgegevens</h2>
+              <div class="mb-4">
+                <label for="name" class="block text-black-75">Uw naam <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-black-75">E-mailadres <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="block text-black-75">Telefoonnummer <span class="text-red-500">*</span></label>
+                <input type="tel" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div class="mb-4">
+                <label for="company" class="block text-black-75">Naam bedrijf <span class="text-red-500">*</span></label>
+                <input type="text" id="company" name="company" class="w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <button type="button" onclick="nextStep(2)" class="text-black-5 bg-primary px-6 py-2 shadow-sm hover:shadow-lg">Volgende</button>
+            </div>
+        
+            <!-- UW BEDRIJF -->
+            <div id="step2" class="form-step hidden">
+              <h2 class="text-2xl font-bold mb-6">Uw bedrijf</h2>
+              <div class="mb-4">
+                <label for="slogan" class="block text-black-75">Slogan bedrijf (indien van toepassing)</label>
+                <input type="text" id="slogan" name="slogan" class="w-full p-2 border border-gray-300 rounded">
+              </div>
+              <div class="mb-4">
+                <label for="description" class="block text-black-75">Geef een beknopte uitleg over de kern van uw organisatie <span class="text-red-500">*</span></label>
+                <textarea id="description" name="description" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label for="story" class="block text-black-75">Is er een uniek verhaal rond uw bedrijf?</label>
+                <textarea id="story" name="story" class="w-full p-2 border border-gray-300 rounded"></textarea>
+              </div>
+              <div class="mb-4">
+                <label for="services" class="block text-black-75">Welke diensten moeten aangeprezen worden op uw website <span class="text-red-500">*</span></label>
+                <textarea id="services" name="services" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label class="block text-black-75">Naar welke sociale media-accounts moet verwezen worden op uw website? <span class="text-red-500">*</span></label>
+                <div>
+                  <label class="block"><input type="checkbox" name="socials" value="None" class="mr-2" onchange="toggleSocials(this)">Geen</label>
+                  <label class="block"><input type="checkbox" name="socials" value="Facebook" class="mr-2" onchange="toggleSocials(this)">Facebook</label>
+                  <label class="block"><input type="checkbox" name="socials" value="Instagram" class="mr-2" onchange="toggleSocials(this)">Instagram</label>
+                  <label class="block"><input type="checkbox" name="socials" value="LinkedIn" class="mr-2" onchange="toggleSocials(this)">LinkedIn</label>
+                  <label class="block"><input type="checkbox" name="socials" value="X" class="mr-2" onchange="toggleSocials(this)">X</label>
+                  <label class="block"><input type="checkbox" name="socials" value="YouTube" class="mr-2" onchange="toggleSocials(this)">YouTube</label>
+                  <label class="block"><input type="checkbox" name="socials" value="TikTok" class="mr-2" onchange="toggleSocials(this)">TikTok</label>
+                  <label class="block"><input type="checkbox" name="socials" value="Other" class="mr-2" onchange="toggleSocials(this)">Ander</label>
+                  <input type="text" id="otherSocials" name="other_socials" class="mt-2 w-full p-2 border border-gray-300 rounded hidden" placeholder="Zo ja, specificeer...">
+                </div>
+              </div>
+              <button type="button" onclick="prevStep(1)" class="bg-black-50 text-white px-6 py-2 shadow-sm mr-2">Terug</button>
+              <button type="button" onclick="nextStep(3)" class="text-black-5 bg-primary px-6 py-2 shadow-sm hover:shadow-lg">Volgende</button>
+            </div>
+        
+            <!-- UW WEBSITE -->
+            <div id="step3" class="form-step hidden">
+              <h2 class="text-2xl font-bold mb-6">UW WEBSITE</h2>
+              <div class="mb-4">
+                <label for="website-type" class="block text-black-75">Wilt u een nieuwe website laten maken of een bestaande website laten herontwerpen? <span class="text-red-500">*</span></label>
+                <select id="website-type" name="website-type" class="w-full p-2 border border-gray-300 rounded" required>
+                  <option value="" disabled selected>Kies een optie</option>
+                  <option value="new">Nieuwe website</option>
+                  <option value="redesign">Herontwerp bestaande website</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="site-type" class="block text-black-75">Wilt u een website of webshop laten maken? <span class="text-red-500">*</span></label>
+                <select id="site-type" name="site-type" class="w-full p-2 border border-gray-300 rounded" required>
+                  <option value="" disabled selected>Kies een optie</option>
+                  <option value="website">Website</option>
+                  <option value="webshop">Webshop</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="products" class="block text-black-75">Indien u een webshop wilt laten maken, hoeveel producten moeten er aangeboden worden?</label>
+                <select id="products" name="products" class="w-full p-2 border border-gray-300 rounded">
+                  <option value="" disabled selected>Kies een optie</option>
+                  <option value="1-5">1-5</option>
+                  <option value="5-10">5-10</option>
+                  <option value="10-20">10-20</option>
+                  <option value="20+">20+</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="block text-black-75">Wilt u bijzondere functies op uw site? <span class="text-red-500">*</span></label>
+                <div>
+                  <label class="block"><input type="checkbox" name="features" value="no" class="mr-2" onchange="toggleFeatures(this)">Nee</label>
+                  <label class="block"><input type="checkbox" name="features" value="contactformulier" class="mr-2" onchange="toggleFeatures(this)">Contactformulier</label>
+                  <label class="block"><input type="checkbox" name="features" value="fotogalerij" class="mr-2" onchange="toggleFeatures(this)">Fotogalerij</label>
+                  <label class="block"><input type="checkbox" name="features" value="afsprakensysteem" class="mr-2" onchange="toggleFeatures(this)">Afsprakensysteem</label>
+                  <label class="block"><input type="checkbox" name="features" value="google-reviews" class="mr-2" onchange="toggleFeatures(this)">Google Reviews</label>
+                  <label class="block"><input type="checkbox" name="features" value="reservatiesysteem" class="mr-2" onchange="toggleFeatures(this)">Reservatiesysteem (restaurant)</label>
+                  <label class="block"><input type="checkbox" name="features" value="CMS" class="mr-2" onchange="toggleFeatures(this)">CMS (Content Management System)</label>
+                  <label class="block"><input type="checkbox" name="features" value="other" class="mr-2" onchange="toggleInput(this, 'otherFeatures')">Anders</label>
+                  <input type="text" id="otherFeatures" name="other_features" class="mt-2 w-full p-2 border border-gray-300 rounded hidden" placeholder="Specificeer...">
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="images" class="block text-black-75">Heeft u afbeeldingen tot uw beschikking voor uw website? <span class="text-red-500">*</span></label>
+                <select id="images" name="images" class="w-full p-2 border border-gray-300 rounded" required>
+                  <option value="" disabled selected>Kies een optie</option>
+                  <option value="yes">Ja, ik heb afbeeldingen</option>
+                  <option value="yes-stock">Ja, maar ik wil ook stockafbeeldingen gebruiken</option>
+                  <option value="no-stock">Nee, ik wil stockafbeeldingen gebruiken</option>
+                  <option value="no-create">Nee, ik ga nog afbeeldingen (laten) maken</option>
+                </select>
+                <input type="text" id="otherImages" name="other_images" class="mt-2 w-full p-2 border border-gray-300 rounded hidden" placeholder="Specificeer...">
+              </div>
+              <div class="mb-4">
+                <label class="block text-black-75">Duid aan welke stijl(en) uw website moet hebben <span class="text-red-500">*</span></label>
+                <div>
+                  <label class="block"><input type="checkbox" name="style" value="luxueus" class="mr-2" onchange="toggleStyles(this)">Luxueus</label>
+                  <label class="block"><input type="checkbox" name="style" value="minimalistisch" class="mr-2" onchange="toggleStyles(this)">Minimalistisch</label>
+                  <label class="block"><input type="checkbox" name="style" value="modern" class="mr-2" onchange="toggleStyles(this)">Modern</label>
+                  <label class="block"><input type="checkbox" name="style" value="futuristisch" class="mr-2" onchange="toggleStyles(this)">Futuristisch</label>
+                  <label class="block"><input type="checkbox" name="style" value="elegant" class="mr-2" onchange="toggleStyles(this)">Elegant</label>
+                  <label class="block"><input type="checkbox" name="style" value="retro" class="mr-2" onchange="toggleStyles(this)">Retro</label>
+                  <label class="block"><input type="checkbox" name="style" value="dynamisch" class="mr-2" onchange="toggleStyles(this)">Dynamisch</label>
+                  <label class="block"><input type="checkbox" name="style" value="other" class="mr-2" onchange="toggleInput(this, 'otherStyles')">Anders</label>
+                  <input type="text" id="otherStyles" name="other_styles" class="mt-2 w-full p-2 border border-gray-300 rounded hidden" placeholder="Specificeer...">
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="colors" class="block text-black-75">Zijn er kleuren die u verkiest? Zijn er kleuren die u niet wilt? <span class="text-red-500">*</span></label>
+                <textarea id="colors" name="colors" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label for="inspiration" class="block text-black-75">Zijn er bepaalde websites die u inspireren? <span class="text-red-500">*</span></label>
+                <textarea id="inspiration" name="inspiration" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label for="guidelines" class="block text-black-75">Zijn er nog andere stijlrichtlijnen waar we rekening mee moeten houden?</label>
+                <textarea id="guidelines" name="guidelines" class="w-full p-2 border border-gray-300 rounded"></textarea>
+              </div>
+              <button type="button" onclick="prevStep(2)" class="bg-black-50 text-white px-6 py-2 shadow-sm mr-2">Terug</button>
+              <button type="button" onclick="nextStep(4)" class="text-black-5 bg-primary px-6 py-2 shadow-sm hover:shadow-lg">Volgende</button>
+            </div>
+        
+            <!-- OPMERKINGEN -->
+            <div id="step4" class="form-step hidden">
+              <div class="mb-4">
+                <label for="comments" class="block text-black-75">Eventuele opmerkingen</label>
+                <textarea id="comments" name="comments" class="w-full p-2 border border-gray-300 rounded"></textarea>
+              </div>
+              <button type="button" onclick="prevStep(3)" class="bg-black-50 text-white px-6 py-2 shadow-sm mr-2">Terug</button>
+              <button type="submit" class="bg-green-600 text-white px-6 py-2 shadow-sm">Verzenden</button>
+            </div>
+        
+            <div id="error-message" class="hidden text-red-500 mt-4">Vul alle vragen in.</div>
+          </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary py-20">
+      <a href="https://delta-web.be"><img src="./img/logo/LOGO_NOBG_WHITE_CROPPED.png" alt="Logo" class="w-64 left-0 right-0 ml-auto mr-auto pb-10"></a>
+
+      <div class="grid px-52 text-center footerLinks">
+          <div class="col-start-1 link link1">
+              <h3 class="text-3xl text-secondary">Overzicht</h3>
+              <ul class="text-black-25 text-xl mt-2">
+                  <li><a href="https://delta-web.be" class="hover:text-neutral-400">Home</a></li>
+                  <li><a href="over-ons" class="hover:text-neutral-400">Over ons</a></li>
+                  <li><a href="aanbod" class="hover:text-neutral-400">Aanbod</a></li>
+                  <li><a href="contact" class="hover:text-neutral-400">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col-start-2 link link2">
+              <h3 class="text-3xl text-secondary">Contact</h3>
+              <ul class="text-black-25 text-xl mt-2">
+                  <li><a href="mailto:info@delta-web.be" class="hover:text-neutral-400">info@delta-web.be</a></li>
+                  <li><a href="tel:0032486154852" class="hover:text-neutral-400">+32 486 15 48 52</a></li>
+              </ul>
+          </div>
+          <div class="col-start-3 link link3">
+              <h3 class="text-3xl text-secondary">Voorwaarden & Privacy</h3>
+              <ul class="text-black-25 text-xl mt-2">
+                <li><a href="Algemene Voorwaarden DeltaWeb.pdf" class="hover:text-neutral-400" target="_blank">Algemene Voorwaarden</a></li>
+                <li><a href="Privacyverklaring DeltaWeb.pdf" class="hover:text-neutral-400" target="_blank">Privacyverklaring</a></li>
+            </ul>
+          </div>
+          <div class="col-start-4 link link4">
+              <h3 class="text-3xl text-secondary">Volg Ons</h3>
+              <ul class="text-black-25 text-xl flex flex-row justify-center mt-2">
+                  <li><a href="https://www.facebook.com/profile.php?id=61563913573829" target="_blank" class="px-2 text-2xl hover:text-neutral-400"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="https://www.instagram.com/deltaweb_webdesign/" target="_blank" class="px-2 text-2xl hover:text-neutral-400"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/deltaweb-webdesign/" target="_blank" class="px-2 text-2xl hover:text-neutral-400"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+    
+    <script src="script.js"></script>
+    <script src="gratis_ontwerp.js"></script>
+</body>
+</html>
