@@ -56,6 +56,9 @@ html {
 .bg-secondary {
     background-color: var(--secondary-color);
 }
+.bg-black-10 {
+    background-color: var(--black-10-color);
+}
 .text-primary::selection {
     background: var(--secondary-color);
 }
@@ -696,4 +699,18 @@ header #hamburger {
     .contactForm {
         padding: 3rem 1.5rem;
     }
+}
+
+
+.pl-5 {
+    padding-left: 1.25rem
+}
+.pr-5 {
+    padding-right: 1.25rem
+}
+.ml-10 {
+    margin-left: 2.5rem;
+}
+.list-disc {
+    list-style-type: disc;
 }
