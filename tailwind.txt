@@ -1,0 +1,2 @@
+cd public_html
+npx tailwindcss -i src/input.css -o css/style.css --watch
