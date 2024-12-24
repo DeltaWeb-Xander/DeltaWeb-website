@@ -439,13 +439,9 @@ header #hamburger {
         grid-column-start: 1;
         grid-row-start: 1;
         height: 100%;
-        width: 400px;
         border-top-left-radius: 0.75rem;
         border-bottom-left-radius: 0.75rem;
         border-top-right-radius: 0;
-
-        width: 25rem !important;
-        border: 2px solid black;
     }
     .articleCard div, .articleCard p {
         grid-column-start: 2;
