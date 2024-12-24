@@ -16,7 +16,7 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.2
       with:
-        server: ftp://ftp.delta-web.be
+        server: ftp.delta-web.be
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./public_html/
