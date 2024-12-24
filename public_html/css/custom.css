@@ -56,8 +56,8 @@ html {
 .bg-secondary {
     background-color: var(--secondary-color);
 }
-.bg-black-10 {
-    background-color: var(--black-10-color);
+.bg-black-5 {
+    background-color: var(--black-5-color);
 }
 .text-primary::selection {
     background: var(--secondary-color);
