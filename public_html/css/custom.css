@@ -423,29 +423,13 @@ header #hamburger {
     }
 }
 @media (max-width: 1300px) {
-    #section2, #contactSection1, .articles {
+    #section2, #contactSection1 {
         padding: 5rem 15rem;
         display: flex;
         flex-direction: column;
     }
     .articles {
         padding: 7rem 3rem;
-    }
-    .articleCard {
-        display: grid;
-        grid-template-rows: 1fr;
-    }
-    .articleCard img {
-        grid-column-start: 1;
-        grid-row-start: 1;
-        height: 100%;
-        border-top-left-radius: 0.75rem;
-        border-bottom-left-radius: 0.75rem;
-        border-top-right-radius: 0;
-    }
-    .articleCard div, .articleCard p {
-        grid-column-start: 2;
-        grid-row-start: 1;
     }
     #contactSection1 {
         gap: 0;
@@ -490,6 +474,14 @@ header #hamburger {
     #aboutSection1 {
         gap: 2rem;
         padding: 5rem 10rem;
+    }
+    
+    .articles {
+        display: flex;
+        flex-direction: column;
+    }
+    .articles img {
+        display: none;
     }
 }
 @media (max-width: 1000px) {
