@@ -10,6 +10,16 @@ html {
     margin: 0;
 }
 
+/* SCROLLBAR COLOR */
+body::-webkit-scrollbar {
+    width: auto;
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+
+
 /* CURSOR EFFECT */
 #cursor {
     pointer-events: none;
