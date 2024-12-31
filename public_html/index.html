@@ -18,6 +18,45 @@
             <circle cx="15" cy="15" r="12" stroke-width="0" fill="#283d47af"/>
         </svg>
     </span>
+
+    <!-- Popup -->
+    <div id="popup" class="inset-0 fixed bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg w-2/3 h-4/5 relative px-10 py-3 text-center bg-primary popup-main">
+            <button id="close-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">
+                &times;
+            </button>
+            <h1 class="text-6xl text-butler text-secondary mt-5 font-light">Nieuwjaarsactie</h1>
+
+            <p class="text-black-25 mt-10 text-xl">Vraag nu je website aan en ontvang:</p>
+            <h2 class="text-4xl text-white p-6 border-4 border-secondary font-extrabold mt-5">1 Jaar Gratis Onderhoud én Hosting</h2>
+
+            <a href="gratis_ontwerp" target="_blank"><button class="text-black-5 bg-secondary px-6 py-3 shadow-lg btn1 mt-10">Gratis ontwerp aanvragen</button></a>
+
+            <div class="countdown flex flex-row justify-center mt-10">
+                <div class="grid">
+                    <p id="days" class="text-white text-4xl w-28 font-extrabold m-4 flex justify-center items-center row-start-1 border-secondary border-2 h-28"></p>
+                    <p class="row-start-12 text-white text-2xl font-extrabold">dagen</p>
+                </div>
+                <div class="grid">
+                    <p id="hours" class="text-white text-4xl w-28 font-extrabold m-4 flex justify-center items-center row-start-1 border-secondary border-2 h-28"></p>
+                    <p class="row-start-12 text-white text-2xl font-extrabold">uur</p>
+                </div>
+                <div class="grid">
+                    <p id="minutes" class="text-white text-4xl w-28 font-extrabold m-4 flex justify-center items-center row-start-1 border-secondary border-2 h-28"></p>
+                    <p class="row-start-12 text-white text-2xl font-extrabold">minuten</p>
+                </div>
+                <div class="grid">
+                    <p id="seconds" class="text-white text-4xl w-28 font-extrabold m-4 flex justify-center items-center row-start-1 border-secondary border-2 h-28"></p>
+                    <p class="row-start-12 text-white text-2xl font-extrabold">seconden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Open Icon -->
+    <div id="open-icon" class="fixed bottom-4 right-4 hidden bg-primary text-white p-6 rounded-full shadow-lg cursor-pointer text-xl z-50">
+        &#127881; <!-- Icon (🛎️) -->
+    </div>
         
     <!-- HERO -->
     <section class="hero min-h-screen text-black-5">
